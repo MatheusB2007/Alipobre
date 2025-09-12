@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alipobre - Produtos</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Estilo do login */
+    #login-container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+      width: 300px;
+      text-align: center;
+      margin: 20px auto;
+    }
+    #login-container input {
+      width: 90%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    #login-container button {
+      width: 95%;
+      padding: 10px;
+      margin-top: 10px;
+      background: #4CAF50;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+    }
+    #login-container button:hover {
+      background: #45a049;
+    }
+    #login-container .link {
+      margin-top: 15px;
+      cursor: pointer;
+      color: blue;
+      text-decoration: underline;
+      font-size: 14px;
+    }
+    #login-msg {
+      font-size: 14px;
+      margin-top: 10px;
+    }
+    #usuario-logado {
+      font-weight: bold;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🛒 Alipobre</h1>
+    <p>O shopping onde o preço é baixo, mas a qualidade é mais baixo ainda 🤭</p>
+    <button id="darkModeToggle" class="btn btn-outline-light ms-3">🌙</button>
+  </header>
+
+  <!-- Login / Cadastro -->
+  <div id="login-container">
+    <h2 id="login-title">Criar Conta</h2>
+    <input type="text" id="nome" placeholder="Nome completo">
+    <input type="email" id="email" placeholder="E-mail">
+    <input type="password" id="senha" placeholder="Senha">
+    <button id="login-btn">Cadastrar</button>
+    <p id="login-msg"></p>
+    <p class="link" id="alternar">Já tem conta? Entrar</p>
+    <p id="usuario-logado"></p>
+  </div>
+
+  <!-- Filtros -->
+  <nav class="filtros">
+    <button class="filtro-btn ativo" data-categoria="all">Todos</button>
+    <button class="filtro-btn" data-categoria="calcados">Calçados</button>
+    <button class="filtro-btn" data-categoria="roupas">Roupas</button>
+    <button class="filtro-btn" data-categoria="acessorios">Acessórios</button>
+  </nav>
+
+
+   <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alipobre - Produtos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      color: #222;
+      margin: 0;
+      padding: 0;
+    }
+    .produtos-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+    .produto-card {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 15px;
+      width: 220px;
+      text-align: center;
+      background: #fff;
+    }
+    .produto-card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .preco-antigo {
+      text-decoration: line-through;
+      color: #999;
+    }
+    .btn-comprar {
+      background: #ff6600;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 5px;
+    }
+    .btn-comprar:hover { background: #e65c00; }
+  </style>
+</head>
+<body>
+
+  <div class="produtos-container">
+
+    <!-- Produto 1 -->
+    <div class="produto-card" data-categoria="calcados">
+      <img src="JD8-4926-016_zoom1.webp" alt="Tênis Mike Vermelho Infantil">
+      <h2>Tênis Mike Vermelho </h2>
+      <p class="descricao">Tênis confortável e estiloso, ideal para corridas de mentira.</p>
+      <p><strong>Tamanho:</strong>
+        <select class="tamanho-select">
+          <option value="">Selecione</option>
+          <option>28</option><option>30</option><option>32</option>
+          <option>34</option><option>36</option><option>38</option>
+          <option>40</option><option>42</option><option>44</option>
+        </select>
+      </p>
+      <p class="preco-antigo">R$ 399,99</p>
+      <p class="preco">R$ 49,99</p>
+      <button class="btn-comprar">COMPRAR</button>
+    </div>
+
+    <!-- Produto 2 -->
+    <div class="produto-card" data-categoria="roupas">
+      <img src="camisa_adidas_core_18_branca_e_preta_94319_1_ecb28f41b29688ff8a09eac98d8ad2a4.webp" alt="Camisa Adibos">
+      <h2>Camisa Adibos Original</h2>
+      <p class="descricao">Camisa leve e respirável, perfeita para jogar bola na várzea.</p>
+      <p><strong>Tamanho:</strong>
+        <select class="tamanho-select">
+          <option value="">Selecione</option>
+          <option>P</option><option>M</option>
+          <option>G</option><option>GG</option>
+          <option>G1</option>
+        </select>
+      </p>
+      <p class="preco-antigo">R$ 199,99</p>
+      <p class="preco">R$ 29,99</p>
+      <button class="btn-comprar">COMPRAR</button>
+    </div>
+
+    <!-- Produto 3 -->
+    <div class="produto-card" data-categoria="acessorios">
+      <img src="OIP (1).webp" alt="Relógio Rolezx">
+      <h2>Relógio Rolezx Dourado</h2>
+      <p class="descricao">Relógio elegante, brilha até no escuro. A prova de água da chuva (se não cair água).</p>
+      <p class="preco-antigo">R$ 1.999,99</p>
+      <p class="preco">R$ 99,99</p>
+      <button class="btn-comprar">COMPRAR</button>
+    </div>
+
+    <!-- Produto 4 -->
+    <div class="produto-card" data-categoria="acessorios">
+      <img src="R.jpg" alt="Bolsa Gutti">
+      <h2>Bolsa lutti Luxo</h2>
+      <p class="descricao">Bolsa sofisticada, ideal para impressionar no rolê.</p>
+      <p class="preco-antigo">R$ 899,99</p>
+      <p class="preco">R$ 59,99</p>
+      <button class="btn-comprar">COMPRAR</button>
+    </div>
+
+  </div>
+
+  <!-- Carrinho -->
+  <div id="carrinho" class="carrinho">
+    <h2>🛒 Carrinho</h2>
+    <ul id="carrinho-items"></ul>
+    <p><strong>Total:</strong> R$ <span id="carrinho-total">0,00</span></p>
+
+    <!-- Forma de pagamento -->
+    <h3>💳 Forma de Pagamento</h3>
+    <label><input type="radio" name="pagamento" value="cartao" checked> Cartão de Crédito (à vista)</label><br>
+    <label><input type="radio" name="pagamento" value="pix"> Pix</label><br>
+    <label><input type="radio" name="pagamento" value="parcelado"> Parcelamento no Cartão</label>
+
+    <div id="pagamento-detalhes">
+      <!-- Cartão -->
+      <div id="cartao-detalhes" class="detalhe-pagamento">
+        <label>Número do Cartão:</label><br>
+        <input type="text" placeholder="**** **** **** 1234"><br>
+        <label>Validade:</label><br>
+        <input type="text" placeholder="MM/AA"><br>
+        <label>CVV:</label><br>
+        <input type="password" placeholder="***">
+      </div>
+
+      <!-- Pix -->
+      <div id="pix-detalhes" class="detalhe-pagamento" style="display:none;">
+        <p>Use a chave Pix abaixo para pagamento:</p>
+        <strong>pix@alipobre.com</strong>
+      </div>
+
+      <!-- Parcelado -->
+      <div id="parcelado-detalhes" class="detalhe-pagamento" style="display:none;">
+        <label>Escolha o número de parcelas:</label><br>
+        <select id="parcelas">
+          <option value="1">1x sem juros</option>
+          <option value="2">2x sem juros</option>
+          <option value="3">3x sem juros</option>
+          <option value="6">6x com juros (1,5% a.m.)</option>
+          <option value="12">12x com juros (2% a.m.)</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="botoes-carrinho">
+      <button id="limpar-carrinho" class="btn-comprar">🗑️ Limpar Carrinho</button>
+      <button id="finalizar-compra" class="btn-comprar">✅ Finalizar Compra</button>
+    </div>
+  </div>
+
+  <script>
+    // DARK MODE
+    const toggle = document.getElementById("darkModeToggle");
+    toggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      toggle.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+    });
+
+    // FILTROS
+    const filtroBtns = document.querySelectorAll('.filtro-btn');
+    const produtos = document.querySelectorAll('.produto-card');
+    filtroBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filtroBtns.forEach(b => b.classList.remove('ativo'));
+        btn.classList.add('ativo');
+        const categoria = btn.getAttribute('data-categoria');
+        produtos.forEach(produto => {
+          const produtoCategoria = produto.getAttribute('data-categoria');
+          produto.style.display = (categoria === 'all' || produtoCategoria === categoria) ? 'block' : 'none';
+        });
+      });
+    });
+
+    // LOGIN
+    const loginTitle = document.getElementById("login-title");
+    const loginBtn = document.getElementById("login-btn");
+    const alternar = document.getElementById("alternar");
+    const loginMsg = document.getElementById("login-msg");
+    const usuarioLogado = document.getElementById("usuario-logado");
+    const nomeInput = document.getElementById("nome");
+    const emailInput = document.getElementById("email");
+    const senhaInput = document.getElementById("senha");
+
+    let modoCadastro = true;
+    let usuarioAtivo = null;
+
+    alternar.addEventListener("click", () => {
+      modoCadastro = !modoCadastro;
+      if (modoCadastro) {
+        loginTitle.textContent = "Criar Conta";
+        loginBtn.textContent = "Cadastrar";
+        nomeInput.style.display = "block";
+        alternar.textContent = "Já tem conta? Entrar";
+      } else {
+        loginTitle.textContent = "Entrar";
+        loginBtn.textContent = "Login";
+        nomeInput.style.display = "none";
+        alternar.textContent = "Não tem conta? Criar";
+      }
+      loginMsg.textContent = "";
+    });
+
+    loginBtn.addEventListener("click", () => {
+      const nome = nomeInput.value.trim();
+      const email = emailInput.value.trim();
+      const senha = senhaInput.value.trim();
+
+      if (!email || !senha || (modoCadastro && !nome)) {
+        loginMsg.textContent = "Preencha todos os campos!";
+        loginMsg.style.color = "red";
+        return;
+      }
+
+      if (modoCadastro) {
+        localStorage.setItem("usuario", JSON.stringify({ nome, email, senha }));
+        loginMsg.textContent = "Conta criada com sucesso! ✅";
+        loginMsg.style.color = "green";
+      } else {
+        const usuario = JSON.parse(localStorage.getItem("usuario"));
+        if (usuario && usuario.email === email && usuario.senha === senha) {
+          usuarioAtivo = usuario;
+          usuarioLogado.textContent = `Bem-vindo, ${usuario.nome}! 🎉`;
+          loginMsg.textContent = "";
+        } else {
+          loginMsg.textContent = "E-mail ou senha incorretos!";
+          loginMsg.style.color = "red";
+        }
+      }
+    });
+
+    // CARRINHO
+    const btnComprar = document.querySelectorAll('.btn-comprar');
+    const carrinhoItems = document.getElementById('carrinho-items');
+    const carrinhoTotal = document.getElementById('carrinho-total');
+    const limparCarrinho = document.getElementById('limpar-carrinho');
+    const finalizarCompra = document.getElementById('finalizar-compra');
+    const radiosPagamento = document.querySelectorAll('input[name="pagamento"]');
+    const cartaoDetalhes = document.getElementById("cartao-detalhes");
+    const pixDetalhes = document.getElementById("pix-detalhes");
+    const parceladoDetalhes = document.getElementById("parcelado-detalhes");
+    const parcelasSelect = document.getElementById("parcelas");
+
+    let carrinho = [];
+
+    btnComprar.forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (!btn.closest('.produto-card')) return;
+        const produtoCard = btn.parentElement;
+        const nome = produtoCard.querySelector('h2').textContent;
+        const precoText = produtoCard.querySelector('.preco').textContent.replace('R$', '').replace(',', '.');
+        const preco = parseFloat(precoText);
+
+        carrinho.push({ nome, preco });
+        atualizarCarrinho();
+      });
+    });
+
+    function atualizarCarrinho() {
+      carrinhoItems.innerHTML = '';
+      let total = 0;
+      carrinho.forEach((item, index) => {
+        total += item.preco;
+        const li = document.createElement('li');
+        li.textContent = `${item.nome} - R$ ${item.preco.toFixed(2)}`;
+        const btnRemover = document.createElement('button');
+        btnRemover.textContent = '❌';
+        btnRemover.addEventListener('click', () => {
+          carrinho.splice(index, 1);
+          atualizarCarrinho();
+        });
+        li.appendChild(btnRemover);
+        carrinhoItems.appendChild(li);
+      });
+      carrinhoTotal.textContent = total.toFixed(2);
+    }
+
+    limparCarrinho.addEventListener('click', () => {
+      carrinho = [];
+      atualizarCarrinho();
+    });
+
+    radiosPagamento.forEach(radio => {
+      radio.addEventListener("change", () => {
+        cartaoDetalhes.style.display = radio.value === "cartao" ? "block" : "none";
+        pixDetalhes.style.display = radio.value === "pix" ? "block" : "none";
+        parceladoDetalhes.style.display = radio.value === "parcelado" ? "block" : "none";
+      });
+    });
+
+    finalizarCompra.addEventListener('click', () => {
+      if (!usuarioAtivo) {
+        alert("⚠️ Você precisa estar logado para finalizar a compra!");
+        return;
+      }
+
+      if (carrinho.length === 0) {
+        alert("Seu carrinho está vazio! 🛒");
+        return;
+      }
+
+      const pagamentoSelecionado = document.querySelector('input[name="pagamento"]:checked').value;
+      const total = parseFloat(carrinhoTotal.textContent);
+      let mensagem = `Compra finalizada com sucesso!\nCliente: ${usuarioAtivo.nome}\nForma de pagamento: ${pagamentoSelecionado}\nTotal: R$ ${total.toFixed(2)}`;
+
+      if (pagamentoSelecionado === "cartao") {
+        mensagem += "\nPagamento processado no cartão à vista! 💳";
+      } else if (pagamentoSelecionado === "pix") {
+        mensagem += "\nUse a chave Pix: pix@alipobre.com ⚡";
+      } else if (pagamentoSelecionado === "parcelado") {
+        const parcelas = parseInt(parcelasSelect.value);
+        let valorParcela = total / parcelas;
+        if (parcelas === 6) valorParcela = (total * 1.075) / 6;
+        else if (parcelas === 12) valorParcela = (total * 1.268) / 12;
+        mensagem += `\nParcelado em ${parcelas}x de R$ ${valorParcela.toFixed(2)} 💳`;
+      }
+
+      alert(mensagem);
+      carrinho = [];
+      atualizarCarrinho();
+    });
+  </script>
+</body>
+</html>
+
